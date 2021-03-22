@@ -1,3 +1,5 @@
+# Hackathon FCamara
+
 ### Problemática
 
 
@@ -49,6 +51,8 @@ Usuários avulsos e anônimos podem acessar, buscar a escola com base em alguns 
 
     — Documentos opcionais: link do Trello, Notion, Mural, Jira, Wireframe...
 
-    — Se entregarem antes do prazo, tudo bem, melhor para você, para seu time e para nós também! Mas se entregarem fora do prazo, você poderá ser desclassificado. Então, estejam bem alinhados e preparados para essa entrega.#  hackathon  FCamara
+    — Se entregarem antes do prazo, tudo bem, melhor para você, para seu time e para nós também! Mas se entregarem fora do prazo, 
+    você poderá ser desclassificado. Então, estejam bem alinhados e preparados para essa entrega.#  hackathon  FCamara
+
 Esse repositório serve para documentar a organização dos nossos eventos
 
