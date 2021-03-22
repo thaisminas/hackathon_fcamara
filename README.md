@@ -1,5 +1,6 @@
 ### Problemática
 
+
 "Nós sabemos o quanto é complicado para os pais poderem comprar material escolar para seus filhos. Os preços aumentam de semestre para semestre. Principalmente quando falamos de educação pública, onde a dificuldade é ainda maior e vem por diversos fatores..."
 
 Pensando nisso, tivemos a ideia de criar uma aplicação, onde os pais irão cadastrar seus filhos que estudam em escolas estaduais e municipais, e também a lista de material escolar que precisam e não tem condições de comprar.
