@@ -6,3 +6,24 @@ button {
     margin-left: 6.5rem;
     margin-top: 2.5rem;
 }
+
+.contato-select,
+.group-radio {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contato-select{
+    margin-left: 10rem;
+    margin-top: -3rem;
+}
+
+.group-radio .radio:first-child {
+    margin-top: 0;
+}
+
+.button-enviar {
+    margin-top: -2rem;
+    margin-left: 1rem;
+}
