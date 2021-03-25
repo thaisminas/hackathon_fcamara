@@ -9,21 +9,21 @@
 
     <body>
         <header>
-            <nav class="nav">
+            <nav class="navbar navbar-default">
                 <div class="container">
-                    <div class="nav-bar header">
+                    <a class="navbar-brand" href="#">Nome do app</a>
+                    <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar">MENU</span>
                         </button>
-                        <a class="navbar-brand" href="#">Nome do app</a>
                     </div>
     
                     <div class="collapse navbar-collapse" id="collapse-navbar">
                         <ul class="nav navbar-nav">
                             <li><a href="#quem-somos">Quem somos</a></li>
                             <li><a href="#quem-ajudamos">Quem ajudamos</a></li>
-                            <li><a href="#faca-parte">Faça parte</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modal-button">Faça parte</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,59 +40,74 @@
                 <img class="img-fluid" src="./assets/servicos.jpg" alt="conteúdo de aprofundamento do serviço">
                 <button type="button" class="btn btn-primary btn-lg">Beneficiados</button>
             </div>
-
-            <section id="quem-somos" class="container">
-                    <h2 class="container">Quem somos</h2>    
-            </section>
-
-            <section id="quem-ajudamos" class="container">
-                <h2 class="container">Quem ajudamos</h2>    
-            </section>
-
-            <section id="faca-parte" class="container">
-                <h2 class="container">Faça parte</h2>    
-                <form>
-                    <div class="form-group">
-                        <label for="contato-name">Nome:</label>
-                        <input class="form-control" id="contato-name" type="text" placeholder="Seu Nome">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contato-email">Email:</label>
-                        <div class="input-group-prepend"> 
-                            <div class="input-group-text">@</div>
-                            <input type="email" class="form-control" id="contato-email" placeholder="Seu E-mail">
-                        </div>
-                    </div>
-
-                    <div class="group-radio">
-                        <div class="radio"> 
-                            <label>
-                                <input type="radio" name="tipo-pessoa" checked>
-                                Pessoa Física
-                            </label>
-                        </div>
-
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="tipo-pessoa">
-                                Pessoa Jurídica
-                            </label>
-                        </div>
-                    </div>
-
-                    <select class="contato-select form-control">
-                        <option disabled selected>Tipo de Situação</option>
-                        <option>Pais / Responsáveis</option>
-                        <option>Doadores</option>
-                    </select>
-
-                    <button class="btn btn-primary button-enviar" type="submit">Enviar</button>
-
-                </form>
-            </section>
-
         </main>
+
+        <div class="modal fade" id="modal-button" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Faça parte</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>X</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body" id="faca-parte">
+                        <form>
+                            <div class="form-group">
+                                <label for="contato-name">Nome:</label>
+                                <input class="form-control" id="contato-name" type="text" placeholder="Seu Nome">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="contato-email">Email:</label>
+                                <div class="input-group-prepend"> 
+                                    <div class="input-group-text">@</div>
+                                    <input type="email" class="form-control" id="contato-email" placeholder="Seu E-mail">
+                                </div>
+                            </div>
+            
+                            <div class="group-radio">
+                                <div class="radio"> 
+                                    <label>
+                                        <input type="radio" name="tipo-pessoa" checked>
+                                        Pessoa Física
+                                    </label>
+                                </div>
+            
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="tipo-pessoa">
+                                        Pessoa Jurídica
+                                    </label>
+                                </div>
+                            </div>
+            
+                            <select class="contato-select form-control">
+                                <option disabled selected>Situação</option>
+                                <option>Pais / Responsáveis</option>
+                                <option>Doadores</option>
+                            </select>            
+                        </form>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="quem-somos" class="container">
+                <h2 class="container">Quem somos</h2>    
+        </section>
+
+        <section id="quem-ajudamos" class="container">
+            <h2 class="container">Quem ajudamos</h2>    
+        </section>
+
     </body>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

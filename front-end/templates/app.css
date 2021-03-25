@@ -23,11 +23,7 @@ button {
     margin-top: 0;
 }
 
-.button-enviar {
-    margin-top: -2rem;
-    margin-left: 1rem;
-}
-
-.nav-bar {
+.navbar-header {
     margin-left: 8rem;
+    margin-top: -5rem;
 }
