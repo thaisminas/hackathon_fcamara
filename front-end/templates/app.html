@@ -21,9 +21,9 @@
     
                     <div class="collapse navbar-collapse" id="collapse-navbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#quem-somos">Quem somos</a></li>
-                            <li><a href="#quem-ajudamos">Quem ajudamos</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#modal-button">Faça parte</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modal-quem-somos">Quem somos</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modal-quem-ajudamos">Quem ajudamos</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modal-faca-parte">Faça parte</a></li>
                         </ul>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
             </div>
         </main>
 
-        <div class="modal fade" id="modal-button" tabindex="-1" role="dialog">
+        <div class="modal fade" id="modal-faca-parte" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -52,7 +52,7 @@
                         </button>
                     </div>
 
-                    <div class="modal-body" id="faca-parte">
+                    <div class="modal-body">
                         <form>
                             <div class="form-group">
                                 <label for="contato-name">Nome:</label>
@@ -100,13 +100,43 @@
             </div>
         </div>
 
-        <section id="quem-somos" class="container">
-                <h2 class="container">Quem somos</h2>    
-        </section>
+        <div class="modal fade" id="modal-quem-somos" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Quem somos</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <p>Somos uma empresa...</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
-        <section id="quem-ajudamos" class="container">
-            <h2 class="container">Quem ajudamos</h2>    
-        </section>
+        <div class="modal fade" id="modal-quem-ajudamos" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Quem ajudamos</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <p>Nosso objetivo é ajudar...</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
     </body>
 
