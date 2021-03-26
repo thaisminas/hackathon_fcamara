@@ -5,7 +5,14 @@
 <ul>
 {% for post in object_list %}
   <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a><br/>
-  {{ post.body }} - <a href="{% url 'update-post' post.pk %}">Edit</a></li>
+  - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+  {{ post.body|slice:"200"|safe }} 
+  {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+    - <a href="{% url 'update-post' post.pk %}">Edit</a> -
+    <a href="{% url 'delete-post' post.pk %}">Delete</a> </li>
+    {% endif %}
+  {% endif %}
 {% endfor %}
 </ul>
 

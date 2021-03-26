@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block title %}
- Donate
+ Donate - Delete
 {% endblock %}
 {% block content %}
 
 {% if user.is_authenticated %}
   {% if user.id == post.author.id %}
-    <h1>Update Donate</h1>
+    <h1>Delete Donate</h1>
     <br/><br/>
+    <h3>Delete: {{ post.title }}</h3>
+    <br/><br/>
+
     <div class="form-group">
       <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Donate</button>
+        <strong>Are you sure?</strong>
+        <button class="btn btn-secondary">Delete</button>
       </form>
     </div>
   {% else %}
