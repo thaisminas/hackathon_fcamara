@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.contrib import admin
+from .models import Doacao
 
-# Register your models here.
+
+class DoacaoAdmin(admin.ModelAdmin):
+    list_display = [
+        'id_doacao',
+        'tipo_doacao',
+        'valor_doacao'
+    ]
+
+    #Usarei este codigo quando tiver dados para serem utilizados
+    # def nome_doador(self, obj):
+    #     obj.lista.usuario_lista.nome
+    # nome_doador.short_description = 'Usuario'
+
+
+admin.site.register(Doacao, DoacaoAdmin)
