@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Feed</h1>
+  <ul>
+    {% for donate in object_list %}
+      <li>
+      {% if donate.anon %}
+        De: Anônimo Para: {{ donate.student }}  
+      {% else %}
+        De: {{ donate.author }} Para: {{ donate.student }}
+      {% endif %}
+        <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}</li>
+      <hr>
+    {% endfor %}
+  </ul>
+{% endblock %}
