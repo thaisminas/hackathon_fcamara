@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>My Donations</h1>
+  <ul>
+    {% for donate in object_list %}      
+      {% if donate.author.id == user.id %}
+        <li>
+          De: {{ donate.author }} Para: {{ donate.student }}
+          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+        </li>
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}

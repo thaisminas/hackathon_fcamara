@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>Students</h1>  
-  <ul>
     {% for student in object_list %}
-      <li>
-        <a href="{% url 'add_donate' %}">
-         {{ student.name }}
-        </a>
-      <hr>
+      {% if student.author.id == user.id %}
+        <div class="card" style="width: 18rem;">
+          {% if student.profile_pic %}
+            <img src = "{{ student.profile_pic.url }}" sclass="card-img-top">
+          {% endif %}
+          <div class="card-body">
+            <a href="{% url 'add_donate' %}">
+              {{ student.name }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
     {% endfor %}
-  </ul>
 {% endblock %}
+
+

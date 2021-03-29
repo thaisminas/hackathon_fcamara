@@ -20,15 +20,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% if user.is_authenticated %}
+              {% if user.profile.profile_type.id == 2%}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'student' %}">Meus Alunos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'add_student' %}">Novo Aluno</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'donated' %}">Doações</a>
+                </li>
+              {% else %}  
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_donate' %}">Donate</a>
+                <a class="nav-link" href="{% url 'my_donations' %}">Doações</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'student' %}">Students</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_student' %}">Add students</a>
-              </li>
+              {% endif %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>

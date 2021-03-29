@@ -8,12 +8,18 @@
     <h1>Add Student</h1>
     <br/><br/>
     <div class="form-group">
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+        {{ form.media }}
         {{ form.as_p }}
         <button class="btn btn-secondary">Add Student</button>
       </form>
     </div>
+
+    <script>  
+      var n = "{{ user.id }}";
+      document.getElementById("owner").value = n;
+    </script>
 {% endif %}
 
 

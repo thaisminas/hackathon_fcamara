@@ -3,6 +3,22 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+class ProfileType(models.Model):
+  name = models.CharField(max_length=255)
+
+  def __str__(self):
+    return self.name
+
+
+class Profile(models.Model):
+  user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+  cpf = models.CharField(max_length=255)
+  profile_type = models.ForeignKey(ProfileType, on_delete=models.CASCADE, null=True)
+
+  def __str__(self):
+    return str(self.user)
+  
+
 class Grade(models.Model):
   name = models.CharField(max_length=255)
 
@@ -43,7 +59,10 @@ class Student(models.Model):
   cpf = models.BigIntegerField(null=True)
   birth_date = models.DateField(null=True)
   grade = models.ForeignKey(Grade, on_delete=models.CASCADE, null=True)
-  school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
+  school = models.CharField(max_length=255, null=True)
+  profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
+  registration_pic = models.ImageField(null=True, blank=True, upload_to="images/")
+
 
   def __str__(self):
     return self.name
