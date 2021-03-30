@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#dados-responsavel">Pais / Responsáveis</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#dados-responsavel" data-dismiss="modal">Pais / Responsáveis</a>
                         <a class="btn btn-primary btn-lg btn block" href="#" role="button" data-toggle="modal" data-target="#">Doadores</a>
                         
                     </div>
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#senha-responsavel">Próximo</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#senha-responsavel" data-dismiss="modal">Próximo</a>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
@@ -199,7 +199,77 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Próximo</button>
+                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#dados-crianca" data-dismiss="modal">Próximo</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="dados-crianca" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dados da criança</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>X</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="contato-crianca">Qual é o nome da sua criança ?</label>
+                                <input class="form-control" id="contato-crianca" type="text" placeholder="Qual é o nome da sua criança ?">
+                            </div>
+
+                            <div class="group-radio">
+                                <div class="radio"> 
+                                    <label>
+                                        <input type="radio" name="genero-crianca" checked>
+                                        Menino
+                                    </label>
+                                </div>
+
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="genero-crianca">
+                                        Menina
+                                    </label>
+                                </div>
+
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="genero-crianca">
+                                        Prefiro não informar
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="crianca-cpf">CPF</label>
+                                <input class="form-control" id="crianca-cpf" type="text" placeholder="CPF">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="crianca-nascimento">Nascimento</label>
+                                <input class="form-control" id="crianca-nascimento" type="text" placeholder="Nascimento">
+                            </div>
+
+                            <form>
+                                <div class="form-group">
+                                  <label for="foto-crianca">Foto</label>
+                                  <input type="file" class="form-control-file" id="foto-crianca">
+                                </div>
+                              </form>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="" data-dismiss="modal">Próximo</a>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
