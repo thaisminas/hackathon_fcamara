@@ -116,17 +116,17 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="contato-name">Nome:</label>
+                                <label for="contato-name"></label>
                                 <input class="form-control" id="contato-name" type="text" placeholder="Qual é seu nome?">
                             </div>
 
                             <div class="form-group">
-                                <label for="contato-cpf">Nome:</label>
+                                <label for="contato-cpf"></label>
                                 <input class="form-control" id="contato-cpf" type="text" placeholder="Informe seu CPF">
                             </div>
 
                             <div class="form-group">
-                                <label for="contato-email">Email:</label>
+                                <label for="contato-email"></label>
                                 <div class="input-group-prepend"> 
                                     <div class="input-group-text">@</div>
                                     <input type="email" class="form-control" id="contato-email" placeholder="Informe seu E-mail">
@@ -182,17 +182,17 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="senha-pai">Confirme sua senha</label>
+                                <label for="senha-pai"></label>
                                 <input class="form-control" id="senha-pai" type="password" placeholder="Confirme sua senha">
                             </div>
 
                             <div class="form-group">
-                                <label for="contato-cep">Informe seu CEP</label>
+                                <label for="contato-cep"></label>
                                 <input class="form-control" id="contato-cep" type="text" placeholder="Informe seu CEP">
                             </div>
 
                             <div class="form-group">
-                                <label for="contato-endereco">Endereço</label>
+                                <label for="contato-endereco"></label>
                                 <input type="email" class="form-control" id="contato-endereco" placeholder="Endereço">
                             </div>
                         </form>
@@ -219,11 +219,11 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="contato-crianca">Qual é o nome da sua criança ?</label>
+                                <label for="contato-crianca"></label>
                                 <input class="form-control" id="contato-crianca" type="text" placeholder="Qual é o nome da sua criança ?">
                             </div>
 
-                            <div class="group-radio">
+                            <div class="form-check">
                                 <div class="radio"> 
                                     <label>
                                         <input type="radio" name="genero-crianca" checked>
@@ -248,12 +248,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="crianca-cpf">CPF</label>
+                                <label for="crianca-cpf"></label>
                                 <input class="form-control" id="crianca-cpf" type="text" placeholder="CPF">
                             </div>
 
                             <div class="form-group">
-                                <label for="crianca-nascimento">Nascimento</label>
+                                <label for="crianca-nascimento"></label>
                                 <input class="form-control" id="crianca-nascimento" type="text" placeholder="Nascimento">
                             </div>
 
@@ -261,6 +261,52 @@
                                 <div class="form-group">
                                   <label for="foto-crianca">Foto</label>
                                   <input type="file" class="form-control-file" id="foto-crianca">
+                                </div>
+                              </form>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#dados-escola" data-dismiss="modal">Próximo</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="dados-escola" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dados da escola</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>X</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="nome-escola"></label>
+                                <input class="form-control" id="nome-escola" type="text" placeholder="Escola">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="matricula"></label>
+                                <input class="form-control" id="matricula" type="text" placeholder="Matrícula">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="serie"></label>
+                                <input class="form-control" id="serie" type="text" placeholder="Série">
+                            </div>
+
+                            <form>
+                                <div class="form-group">
+                                  <label for="comprovante">Comprovante</label>
+                                  <input type="file" class="form-control-file" id="comprovante">
                                 </div>
                               </form>
 
