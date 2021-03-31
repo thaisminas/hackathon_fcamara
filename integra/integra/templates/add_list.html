@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+ Donate
+{% endblock %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% for student in students %}
+      {% if student.id == pk %}
+        <h1>Escolha os itens para {{ student.name }}</h1>
+      {% endif %}
+    {% endfor %}
+    {% for i in items %}
+      {% if i.pic %}
+        <button onclick="myFunction('{{ i.id }}')">
+          <img src ="{{ i.pic.url }}" sclass="card-img-top" style="height: 160px; width: 160px;">
+        </button>
+      {% endif %} 
+    {% endfor %}
+
+    <ul class="list-group">
+    {% for select in selections %}
+      {% if select.student.id == pk %}
+        <li class="list-group-item">{{ select }}</li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+    
+    <form method="POST">
+      <div class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+      </div>
+      <button class="btn btn-secondary">Donate</button>
+    </form>
+
+    <script> 
+      function myFunction(id) {
+        document.getElementById("item").value = id;
+      }
+      var s = "{{ pk }}";
+      document.getElementById("dStudent").value = s;
+    </script>
+
+  {% endif %}
+{% endblock %}

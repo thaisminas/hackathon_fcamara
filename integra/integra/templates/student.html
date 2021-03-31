@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>Students</h1>  
+  {% if user.is_authenticated %}
     {% for student in object_list %}
       {% if student.author.id == user.id %}
-        <div class="card" style="width: 18rem;">
-          {% if student.profile_pic %}
-            <img src = "{{ student.profile_pic.url }}" sclass="card-img-top">
-          {% endif %}
-          <div class="card-body">
-            <a href="{% url 'add_donate' %}">
-              {{ student.name }}
-            </a>
+          <div class="card col" style="width: 17rem; float: left">
+            {% if student.profile_pic %}
+              <img src = "{{ student.profile_pic.url }}" sclass="card-img-top">
+            {% endif %} 
+            <div class="card-body">
+              <a href="{% url 'add_list' student.id %}">
+                {{ student.name|slice:32 }}
+              </a>
+            </div>
           </div>
-        </div>
       {% endif %}
     {% endfor %}
+    <div class="card col" style="width: 17rem; float: left">
+        <img src = "/media/images/adicionar.jpg" sclass="card-img-top">
+      <div class="card-body">
+        <a href="{% url 'add_student' %}">
+          Novo Aluno
+        </a>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}
 
 

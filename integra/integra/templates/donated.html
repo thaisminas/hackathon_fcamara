@@ -2,13 +2,29 @@
 {% block content %}
   <h1>Doações</h1>
   <ul>
+    <h2>Pendentes </h2>
     {% for donate in object_list %}  
       {% if donate.student.author == user %}
-        <li>
-          De: {{ donate.author }} Para: {{ donate.student }}
-          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
-        </li>
-        <hr>
+        {% if donate.closed == False %}
+          {% if donate.notify == True %}
+            {{ donate }}
+            <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+            {% if donate.donation_type.id == 2 %}
+              <br/><a href="{% url 'colected_donation' donate.id %}" class="btn btn-secondary">Coletada</a>
+              <hr>
+            {% endif %}          
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    <h2>Concluidas</h2>
+    {% for donate in object_list %}  
+      {% if donate.student.author == user %}
+        {% if donate.closed %}
+            {{ donate }}
+            <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+          <hr>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
