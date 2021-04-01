@@ -4,25 +4,31 @@
   {% if user.is_authenticated %}
     {% for student in object_list %}
       {% if student.author.id == user.id %}
-          <div class="card col" style="width: 17rem; float: left">
-            {% if student.profile_pic %}
-              <img src = "{{ student.profile_pic.url }}" sclass="card-img-top">
-            {% else %}
-              <img src = "/media/images/no-picture.png" sclass="card-img-top">
-            {% endif %} 
+          <div class="card col" style="width: 17rem; float: left; margin-left: 8%; margin-top: 1rem;">
+            <div style="padding-left: 20%; padding-top: 2%;">
+              {% if student.profile_pic %}
+                <img  style="width: 10rem; " src = "{{ student.profile_pic.url }}" sclass="card-img-top" class="rounded-circle">
+              {% else %}
+                <img style="width: 10rem;" src = "/media/images/no-picture.png" sclass="card-img-top" class="rounded-circle">
+              {% endif %} 
+            </div>
             <div class="card-body">
               <a href="{% url 'add_list' student.id %}">
-                {{ student.name|slice:32 }}
+                {{ student.name|slice:20 }}
+              </a></br>
+              <a href="{% url 'edit_list' student.id %}">
+                Editar lista
               </a>
             </div>
           </div>
       {% endif %}
     {% endfor %}
-    <div class="card col" style="width: 17rem; float: left">
-        <img src = "/media/images/adicionar.png" style="width: 270px; height: 270px;" sclass="card-img-top">
+    <div class="card col" style="width: 17rem; float: left; padding-left: 5%; padding-top: 2%;">
+        <img style="width: 10rem;" src = "/media/images/adicionar.png" class="rounded-circle" style="width: 270px; height: 270px;" sclass="card-img-top">
       <div class="card-body">
         <a href="{% url 'add_student' %}">
           Novo Aluno
+        
         </a>
       </div>
     </div>

@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Donate, Student, School, Profile, ItemSelection, StudentList, Item
-from .forms import DonateForm, StudentForm, ProfileForm, ListForm, DeliverForm, ColectForm
+from .forms import DonateForm, StudentForm, ProfileForm, ListFormSet, DeliverForm, ColectForm
+from django.forms import inlineformset_factory
 from django.urls import reverse_lazy
+from django import forms
 import operator
 
 # def home(request):
@@ -85,7 +87,65 @@ class ProfileRegisterView(CreateView):
   success_url = reverse_lazy('home')
 
 
-class AddListView(CreateView):
+def Createlist(request, pk):
+  ListFormSet = inlineformset_factory(Student, ItemSelection, fields=('item', 'item_quantity'), extra=26,  
+  labels = {'item_quantity': '', 'item': ''}, 
+  widgets= {'item': forms.Select(attrs={'class': 'form-control'}),
+  'item_quantity': forms.NumberInput(attrs={'class': 'form-control'})})
+  student = Student.objects.get(id=pk)
+  formset = ListFormSet(instance=student)
+  #form = ListForm(initial={'student':student})
+
+  if request.method == "POST":
+    formset = ListFormSet(request.POST, instance=student)
+    if formset.is_valid():
+      formset.save()
+      return redirect('student')
+  
+  context = {'formset':formset}
+  return render(request, 'add_list.html', context)
+
+
+def Updatelist(request, pk):
+  selection = ItemSelection.objects.get(student=pk)
+  items = Item.objects.all()
+  formset = ListFormSet(instance=student)
+  if request.method == "POST":
+    formset = ListFormSet(request.POST, instance=student)
+    if formset.is_valid():
+      formset.save()
+      return redirect('student')
+
+  context = {'form':form}
+  return render(request, 'add_list.html', context)
+
+
+""" def AddListView(request, pk):
+   student = Student.objects.get(id=pk)
+   items = request.POST.getlist('item')
+   students = request.POST.getlist('student')
+   quantitys = request.POST.getlist('quantity')
+   res = []
+
+  def get_context_data(self, **kwargs):
+    items = Item.objects.all()
+    students = Student.objects.all()
+    selections = ItemSelection.objects.all()
+
+    
+    context = super(AddListView, self).get_context_data(**kwargs)
+    context['items'] = items
+    context['pk'] = self.kwargs['pk']
+    context['students'] = students
+    context['selections'] = selections
+
+   for item, student, quantity in zip(items,students,quantitys):
+       innerlist = []
+       innerlist.append(objid+', '+name+', '+size+', '+number)
+       res.append(innerlist)
+ """
+
+""" class AddListView(CreateView):
   model = StudentList
   template_name = 'add_list.html'
   form_class = ListForm
@@ -106,7 +166,9 @@ class AddListView(CreateView):
     context['selections'] = selections
 
 
-    return context
+    return context#
+
+ """
 
 
 class DeliveredDonateView(UpdateView):

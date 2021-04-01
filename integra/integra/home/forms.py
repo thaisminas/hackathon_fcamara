@@ -1,7 +1,6 @@
 from django import forms
 from .models import Donate, School, Grade, Student, DonationType, Profile, ItemSelection
 
-
 class DonateForm(forms.ModelForm):
   class Meta:
     model = Donate
@@ -54,14 +53,14 @@ class ProfileForm(forms.ModelForm):
     }
 
 
-class ListForm(forms.ModelForm):
+class ListFormSet(forms.ModelForm):
   class Meta:
     model = ItemSelection
     fields = ('student', 'item', 'item_quantity')
     labels = {'item_quantity': 'Quantidade'}
     widgets = {
       'student': forms.TextInput(attrs={'class': 'form-control', 'id': 'dStudent', 'type': 'hidden'}),
-      'item': forms.Select(attrs={'class': 'form-control', 'id': 'item'}),
+      'item': forms.Select(attrs={'class': 'form-control', 'id': 'item', 'type': 'hidden'}),
       'item_quantity': forms.NumberInput(attrs={'class': 'form-control'}),
     }
 

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}
-Adicionar lista
-{% endblock %}
+{% block title %} Adicionar lista {% endblock %}
+
 {% block content %}
   {% if user.is_authenticated %}
     {% for student in students %}
@@ -26,18 +25,50 @@ Adicionar lista
     </ul>
     
     <form method="POST">
-      <div class="form-group">
+      <div class="form-group" style="color: white;">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ formset.management_form }}
+        {% for form in formset %}
+          {{ form }}<hr/>
+        {% endfor %}
       </div>
       <button class="btn btn-secondary">Adicionar lista</button>
     </form>
 
     <script> 
-      function myFunction(id) {
-        document.getElementById("item").value = id;
-      }
-      var s = "{{ pk }}";
+       $(function() {
+        $("#id_itemselection_set-0-item").val('Agenda escolar');
+        $("#id_itemselection_set-1-item").val('Apontador com depósito');
+        $("#id_itemselection_set-2-item").val('Borracha escolar');
+        $("#id_itemselection_set-3-item").val('Caderno brochurão - 80 fls');
+        $("#id_itemselection_set-4-item").val('Caderno de desenho - 96 fls');
+        $("#id_itemselection_set-5-item").val('Caderno universitário - 200 fls');
+        $("#id_itemselection_set-6-item").val('Calculadora de bolso 8 dígitos');
+        $("#id_itemselection_set-7-item").val('Caneta esferográfica (2 azuis, 1 preta e 1 vermelha)');
+        $("#id_itemselection_set-8-item").val('Canetinha hidrográfica (12 cores)');
+        $("#id_itemselection_set-9-item").val('Cola branca 90g');
+        $("#id_itemselection_set-10-item").val('Cola colorida');
+        $("#id_itemselection_set-11-item").val('Esquadro 45º');
+        $("#id_itemselection_set-12-item").val('Esquadro 60º');
+        $("#id_itemselection_set-13-item").val('Giz de cera (12 cores)');
+        $("#id_itemselection_set-14-item").val('Grafite 0.7');
+        $("#id_itemselection_set-15-item").val('Lápis de cor (12 cores)');
+        $("#id_itemselection_set-16-item").val('Lápis grafite');
+        $("#id_itemselection_set-17-item").val('Lapiseira 0.7');
+        $("#id_itemselection_set-18-item").val('Massa para modelar');
+        $("#id_itemselection_set-19-item").val('Material dourado');
+        $("#id_itemselection_set-20-item").val('Pasta plástica transparente com elástico');
+        $("#id_itemselection_set-21-item").val('Pincel nº 8');
+        $("#id_itemselection_set-22-item").val('Régua');
+        $("#id_itemselection_set-23-item").val('Tesoura sem ponta');
+        $("#id_itemselection_set-24-item").val('Tinta guache (6 cores)');
+        $("#id_itemselection_set-25-item").val('Transferidor 180º');
+
+        $("input:checkbox").hide();
+        $("label").hide();
+      });
+
+      var s = { pk };
       document.getElementById("dStudent").value = s;
     </script>
 

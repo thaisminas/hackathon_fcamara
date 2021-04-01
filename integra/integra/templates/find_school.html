@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Buscar Escolas</h1><br/>
+<h1>Buscar Escolas</h1>
 <div>
-  <select class="btn-secondary" id="Estado"></select><br/><br/>  
-  <a class=" btn btn-secondary" id="vai" >Buscar</a><br/>
+  <!-- <select class="btn-secondary" id="Estado"></select><br/><br/>  
+  <a class=" btn btn-secondary" id="vai" >Buscar</a><br/> -->
 {% for profile in profiles %}
   {% if profile.user.id == user.id %}
-  <hr><div><h2>Escolas em {{ profile.estado }}</h2></div>
+  <hr><p><h2> Escolas em {{ profile.estado }}</h2> <small><a href="#">Pesquisar escolas em outros estados</small></a></p>
   {% endif %}
 {% endfor %}
 </div>
