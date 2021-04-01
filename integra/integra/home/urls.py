@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, DonatedView, AddDonateView, ProfileRegisterView, AddStudentView, LandingView, StudentView, SchoolView, LocalSchoolView, MyDonationsView, AddListView, DeliveredDonateView, ColectedDonateView
+from .views import HomeView, DonatedView, AddDonateView, ProfileRegisterView, AddStudentView, LandingView, StudentView, SchoolView, LocalSchoolView, MyDonationsView, AddListView, DeliveredDonateView, ColectedDonateView, LocalStateView, FindSchoolView
 
 urlpatterns = [
     path('', LandingView.as_view(), name = 'landing'),
@@ -17,4 +17,6 @@ urlpatterns = [
     #path('edit_list/', EditListView.as_view(), name = 'edit_list'),
     path('delivered_donations/<int:pk>', DeliveredDonateView.as_view(), name = 'delivered_donations'),
     path('colected_donation/<int:pk>', ColectedDonateView.as_view(), name = 'colected_donation'),
+    path('local_state/<str:stt>/', LocalStateView, name = 'local_state'),
+    path('find_school/', FindSchoolView, name = 'find_school'),
 ]

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
- Donate
+Adicionar lista
 {% endblock %}
 {% block content %}
   {% if user.is_authenticated %}
@@ -30,7 +30,7 @@
         {% csrf_token %}
         {{ form.as_p }}
       </div>
-      <button class="btn btn-secondary">Donate</button>
+      <button class="btn btn-secondary">Adicionar lista</button>
     </form>
 
     <script> 

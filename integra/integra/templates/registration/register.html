@@ -3,15 +3,38 @@
 Register
 {% endblock %}
 {% block content %}
-
-<h1>Register</h1>
-<div class="form-group">
+  <div>
+    <ul><h2><b>Olá!</b></h2>
+    <p><b>   Estamos felizes com seu interesse pela nossa Plataforma! Para efetuar seu cadastro, precisamos de algumas informações.
+    </b> </p></ul>
+  </div>
+  <div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5; width: 80%; font-weight: bolder">
+    <br/>
+  <h4 style="text-align: center;"><b style="color: black; padding-bottom: 13%;">Suas informações</b></h4>
+  <hr>  
   <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-secondary">Register</button>
-  </form>
-</div>
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field.label }}
+        <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;"> {{ field }} </div>
+        <div style="height: 10px; width: 1px; background-color: #F5B822;"></div>
 
+      {% endfor %}
+      <button style="background-color: #F5B822; border-color: #F5B822; border: 0px; color: #F5B822;"><img src="/media/images/avancar.png"></button>
+      <!-- <div style="margin: 0; width: 20px; height: 20px; border-radius: 50%; background-color: #0069B5; "></div>
+      <div style="margin: 0; width: 20px; height: 20px; border-radius: 50%; background-color:grey;" ></div> -->
+    </form>
+
+  </div>
+  
+  <br/>
+<!-- <script type="text/javascript">
+  var cpf = document.querySelector("#id_username");
+
+  cpf.addEventListener("blur", function(){
+    if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+  });
+
+</script> -->
 
 {% endblock %}

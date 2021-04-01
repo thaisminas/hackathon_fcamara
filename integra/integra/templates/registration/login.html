@@ -13,6 +13,13 @@ Login
     <button class="btn btn-secondary">Login</button>
   </form>
 </div>
+<!-- <script type="text/javascript">
+  var cpf = document.querySelector("#id_username");
 
+  cpf.addEventListener("blur", function(){
+    if(cpf.value != "admin") cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+  });
+
+</script> -->
 
 {% endblock %}

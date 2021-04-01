@@ -1,10 +1,12 @@
 from django import forms
 from .models import Donate, School, Grade, Student, DonationType, Profile, ItemSelection
 
+
 class DonateForm(forms.ModelForm):
   class Meta:
     model = Donate
     fields = ('student', 'author', 'donation_type', 'message', 'anon')
+    labels = {'donation_type': 'Tipo da Doação', 'message': 'Mensagem', 'anon': 'Deseja realizar essa doação de forma anônima' }
     widgets = {
       'student': forms.TextInput(attrs={'class': 'form-control', 'id': 'dStudent', 'type': 'hidden'}),
       'author': forms.TextInput(attrs={'class': 'form-control', 'id': 'donator', 'type': 'hidden'}),
@@ -24,6 +26,7 @@ class StudentForm(forms.ModelForm):
   class Meta:
     model = Student
     fields = ('name', 'cpf', 'birth_date', 'grade', 'school', 'author', 'profile_pic', 'registration_pic')
+    labels = {'name': 'Nome do Aluno', 'school': 'Escola', 'cpf': 'CPF', 'birth_date': 'Data de Nascimento', 'grade': 'Série', 'profile_pic': 'Foto do Aluno', 'registration_pic': 'Comprovante de Matrícula' }
     widgets = {
       'name': forms.TextInput(attrs={'class': 'form-control'}),
       'author': forms.TextInput(attrs={'class': 'form-control', 'id': 'owner', 'type': 'hidden'}),
@@ -37,15 +40,16 @@ class StudentForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
   class Meta:
     model = Profile
-    fields = ('cpf', 'user', 'profile_type', 'cep', 'rua', 'bairro', 'cidade', 'estado')
+    fields = ('user', 'profile_type', 'cep', 'estado', 'cidade', 'rua', 'bairro', 'numero')
+    labels = {'profile_type': 'Tipo de Usuário', 'cep': 'CEP', 'numero': 'Número'}
     widgets = {
-      'cep': forms.TextInput(attrs={'class': 'form-control', 'id': 'cep', 'onblur':'pesquisacep(this.value)'}),
-      'rua': forms.TextInput(attrs={'class': 'form-control', 'id': 'rua'}),
+      'cep': forms.TextInput(attrs={'class': 'form-control', 'id': 'cep'}),
+      'rua': forms.TextInput(attrs={'class': 'form-control', 'id': 'logradouro'}),
+      'numero': forms.TextInput(attrs={'class': 'form-control', 'id': 'numero'}),
       'bairro': forms.TextInput(attrs={'class': 'form-control', 'id': 'bairro'}),
-      'cidade': forms.TextInput(attrs={'class': 'form-control', 'id': 'cidade'}),
       'estado': forms.TextInput(attrs={'class': 'form-control', 'id': 'uf'}),
+      'cidade': forms.TextInput(attrs={'class': 'form-control', 'id': 'cidade'}),
       'user': forms.TextInput(attrs={'class': 'form-control', 'id': 'pUser', 'type': 'hidden'}),
-      'cpf': forms.TextInput(attrs={'class': 'form-control'}),
       'profile_type': forms.Select(attrs={'class': 'form-select'}),
     }
 
@@ -54,6 +58,7 @@ class ListForm(forms.ModelForm):
   class Meta:
     model = ItemSelection
     fields = ('student', 'item', 'item_quantity')
+    labels = {'item_quantity': 'Quantidade'}
     widgets = {
       'student': forms.TextInput(attrs={'class': 'form-control', 'id': 'dStudent', 'type': 'hidden'}),
       'item': forms.Select(attrs={'class': 'form-control', 'id': 'item'}),
@@ -65,6 +70,7 @@ class DeliverForm(forms.ModelForm):
   class Meta:
     model = Donate
     fields = ('notify', )
+    labels = {'notify': 'Confirmar'}
     widgets = {
       'notify': forms.CheckboxInput(attrs={'class': 'btn btn-secondary'})
     }
@@ -74,6 +80,7 @@ class ColectForm(forms.ModelForm):
   class Meta:
     model = Donate
     fields = ('closed', )
+    labels = {'closed': 'Confirmar'}
     widgets = {
       'closed': forms.CheckboxInput(attrs={'class': 'btn btn-secondary'})
     }

@@ -19,6 +19,7 @@ class Profile(models.Model):
   bairro = models.CharField(max_length=255, null=True)
   cidade = models.CharField(max_length=255, null=True)
   estado = models.CharField(max_length=255, null=True)
+  numero = models.CharField(max_length=255, null=True)
 
   def __str__(self):
     return str(self.user)

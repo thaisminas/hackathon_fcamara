@@ -56,10 +56,10 @@ class AddDonateView(CreateView):
 
   def get_context_data(self, **kwargs):
       context = super(AddDonateView, self).get_context_data(**kwargs)
+      students = Student.objects.all()
 
       context['pk'] = self.kwargs['pk']
-      print(self.kwargs)
-      print(self.kwargs['pk'])
+      context['students'] = students
 
       return context
 
@@ -140,4 +140,14 @@ class ColectedDonateView(UpdateView):
       context['donates'] = donates
 
       return context     
-    
+
+
+def LocalStateView(request, stt):
+  schools = School.objects.filter(state=stt)
+  return render(request, 'local_state.html', {'stt':stt,'schools': schools})
+
+
+def FindSchoolView(request):
+  schools = School.objects.all()
+  profiles = Profile.objects.all()
+  return render(request, 'find_school.html', {'profiles':profiles,'schools': schools})
