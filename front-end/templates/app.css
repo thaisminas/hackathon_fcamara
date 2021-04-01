@@ -2,11 +2,6 @@ img {
     padding-top: 5rem;
 }
 
-button {
-    margin-left: 6.5rem;
-    margin-top: 2.5rem;
-}
-
 .contato-select,
 .group-radio {
     width: 50%;
@@ -26,4 +21,30 @@ button {
 .navbar-header {
     margin-left: 8rem;
     margin-top: -5rem;
+}
+
+.logo-header {
+    width: 50%;
+}
+
+.button-menu {
+    margin-left: 7.5rem;
+}
+
+.button-home {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.modal-content{
+    background-color: orange;
+    border-radius: 0.75rem;
+}
+
+.navbar-brand {
+    margin-top: -5rem;
+}
+
+.btn-light {
+    margin-top: 2rem;
 }
