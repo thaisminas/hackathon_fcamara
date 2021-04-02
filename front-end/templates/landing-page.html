@@ -11,95 +11,112 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#">
-                <img src="./assets/logo_horizontal.svg" width="60" height="30" class="d-inline-block align-top" alt="logotipo da Integra">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#quem-somos">Quem somos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#quem-ajudamos">Quem ajudamos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#como-participar">Como participar</a>
-                </li>
-              </ul>
-            </div>
-        </nav>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/logo_horizontal.svg" width="60" height="30" class="d-inline-block align-top" alt="logotipo da Integra">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#quem-somos">Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#quem-ajudamos">Quem ajudamos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#como-participar">Como participar</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </header>
 
-        <div class="container pt-3">
-            <div class="card text-center borda-card">
-                <img class="card-img-top banner" src="./assets/Logo.svg" alt="Banner da Integra">
-                <div class=" botao-login">
-                    <button type="button" class="btn btn-success">Faça seu login</button>
-                </div>
-                <div class="card-body">
-                    <h3 class="text-center fonte-heading pt-5">A importância do material escolar no desenvolvimento da educação</h3>
-                    <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed nec tincidunt lorem.
-                    Vivamus tempus dapibus odio, nec
-                    condimentum urna dignissim a. Nam
-                    non vestibulum massa. Nulla facilisi.
-                    Vivamus neque enim, tempor in mauris
-                    sit amet, cursus vulputate ex.</p>
+        <main>
+            <div class="container pt-3">
+                <div class="card text-center borda-card">
+                    <img class="card-img-top img-fluid banner" src="./assets/Logo.svg" alt="Banner da Integra">
+                    <div class=" col align-self-center">
+                        <button type="button" class="btn btn-success botao-login botao-login-responsivo">Faça seu login</button>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center fonte-heading pt-5">A importância do material escolar no desenvolvimento da educação</h3>
+                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed nec tincidunt lorem.
+                        Vivamus tempus dapibus odio, nec
+                        condimentum urna dignissim a. Nam
+                        non vestibulum massa. Nulla facilisi.
+                        Vivamus neque enim, tempor in mauris
+                        sit amet, cursus vulputate ex.</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container pt-3" id="quem-somos">
-            <div class="card text-center borda-card">
-                <div class="card-body">
-                    <h2 class="text-center fonte-heading pt-5">Quem somos</h2>
-                    <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed nec tincidunt lorem.
-                    Vivamus tempus dapibus odio, nec
-                    condimentum urna dignissim a. Nam
-                    non vestibulum massa. Nulla facilisi.
-                    Vivamus neque enim, tempor in mauris
-                    sit amet, cursus vulputate ex.</p>
+            <div class="container pt-3" id="quem-somos">
+                <div class="card text-center borda-card">
+                    <div class="card-body">
+                        <h2 class="text-center fonte-heading pt-5">Quem somos</h2>
+                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed nec tincidunt lorem.
+                        Vivamus tempus dapibus odio, nec
+                        condimentum urna dignissim a. Nam
+                        non vestibulum massa. Nulla facilisi.
+                        Vivamus neque enim, tempor in mauris
+                        sit amet, cursus vulputate ex.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container pt-3" id="quem-ajudamos">
-            <div class="card text-center borda-card">
-                <div class="card-body">
-                    <h2 class="text-center fonte-heading pt-5">Quem ajudamos</h2>
-                    <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed nec tincidunt lorem.
-                    Vivamus tempus dapibus odio, nec
-                    condimentum urna dignissim a. Nam
-                    non vestibulum massa. Nulla facilisi.
-                    Vivamus neque enim, tempor in mauris
-                    sit amet, cursus vulputate ex.</p>
+            
+            <div class="container pt-3" id="quem-ajudamos">
+                <div class="card text-center borda-card">
+                    <div class="card-body">
+                        <h2 class="text-center fonte-heading pt-5">Quem ajudamos</h2>
+                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed nec tincidunt lorem.
+                        Vivamus tempus dapibus odio, nec
+                        condimentum urna dignissim a. Nam
+                        non vestibulum massa. Nulla facilisi.
+                        Vivamus neque enim, tempor in mauris
+                        sit amet, cursus vulputate ex.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-          
-        <div class="container pt-3" id="como-participar">
-            <div class="card text-center borda-card">
-                <div class="card-body">
-                    <h2 id="como-participar" class="text-center fonte-heading pt-5">Como participar</h2>
-                    <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed nec tincidunt lorem.
-                    Vivamus tempus dapibus odio, nec
-                    condimentum urna dignissim a. Nam
-                    non vestibulum massa. Nulla facilisi.
-                    Vivamus neque enim, tempor in mauris
-                    sit amet, cursus vulputate ex.</p>
-                    <a class="btn btn-primary" href="#" role="button">Faça parte você também</a>
+            
+            <div class="container pt-3" id="como-participar">
+                <div class="card text-center borda-card">
+                    <div class="card-body">
+                        <h2 id="como-participar" class="text-center fonte-heading pt-5">Como participar</h2>
+                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed nec tincidunt lorem.
+                        Vivamus tempus dapibus odio, nec
+                        condimentum urna dignissim a. Nam
+                        non vestibulum massa. Nulla facilisi.
+                        Vivamus neque enim, tempor in mauris
+                        sit amet, cursus vulputate ex.</p>
+                        <a class="btn btn-primary" href="#" role="button">Faça parte você também</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer>
+            <div class="row">
+                <div class="col-auto botao-rede-responsiva">
+                    <a href="#" role="button">
+                        <img src="./assets/Botão Instagram.svg" alt="botão de acesso ao instagram da Integra">
+                    </a>
+                    <a href="#" role="button">
+                        <img src="./assets/Botão Facebook.svg" alt="botão de acesso ao Facebook da Integra" >
+                    </a>
+                </div>
+            </div>
+        </footer>
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

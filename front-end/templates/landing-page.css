@@ -32,8 +32,76 @@ body {
 }
 
 .botao-login {
-    width: 40%;
+    margin-top: -11rem;
     border-radius: 3rem;
-    margin-left: 6rem;
-    margin-top: -7rem;
+}
+
+footer {
+    background-color: #0069B5;
+}
+
+.row{
+    margin-left: 11rem;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+@media(min-width: 375px) {
+    .botao-login-responsivo{
+        margin-top: -13rem;
+    }
+    .botao-rede-responsiva{
+        margin-left: 3.5rem;
+    }
+}
+
+@media(min-width: 425px) {
+    .botao-rede-responsiva{
+        margin-left: 6.5rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .botao-login-responsivo{
+        margin-top: -25rem;
+        width: 45%;
+    }
+    .botao-rede-responsiva{
+        margin-left: 25rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .botao-login-responsivo{
+        margin-top: -35rem;
+        width: 43%;
+        padding: 0.8rem;
+    }
+    .botao-rede-responsiva{
+        margin-left: 40rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .botao-login-responsivo{
+        margin-top: -38rem;
+        width: 43%;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+    .botao-rede-responsiva{
+        margin-left: 60rem;
+    }
+}
+
+@media(min-width: 2560px) {
+    .botao-login-responsivo{
+        margin-top: -38rem;
+        width: 43%;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+    .botao-rede-responsiva{
+        margin-left: 95rem;
+    }
 }
