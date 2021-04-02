@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170" height="41" viewBox="0 0 170 41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a716;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 14px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.044em;
+      }
+
+      .cls-3 {
+        filter: url(#Retângulo_12);
+      }
+    </style>
+    <filter id="Retângulo_12" x="0" y="0" width="170" height="41" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_338" data-name="Grupo 338" transform="translate(-92 -205)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 92, 205)">
+      <rect id="Retângulo_12-2" data-name="Retângulo 12" class="cls-1" width="152" height="23" rx="11.5" transform="translate(9 6)"/>
+    </g>
+    <text id="FAÇA_SEU_LOGIN_" data-name="FAÇA SEU LOGIN
+
+" class="cls-2" transform="translate(109 214)"><tspan x="2.997" y="14">FAÇA SEU LOGIN</tspan></text>
+  </g>
+</svg>

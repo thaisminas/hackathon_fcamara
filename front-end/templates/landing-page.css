@@ -1,0 +1,39 @@
+.fonte-titulo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fonte-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #0069B5
+}
+
+.fonte-paragrafo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.banner {
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+}
+
+.borda-card {
+    border-radius: 3rem;
+}
+
+body {
+    background-image: url(./assets/Background.svg);
+    background-size: cover;
+    height: 100%;
+}
+
+.btn-primary {
+    border-radius: 3rem;
+}
+
+.botao-login {
+    width: 40%;
+    border-radius: 3rem;
+    margin-left: 6rem;
+    margin-top: -7rem;
+}

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="361" height="1342.5" viewBox="0 0 361 1342.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+      }
+
+      .cls-10, .cls-3, .cls-5, .cls-6, .cls-8, .cls-9 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #f5b822;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-6 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-7 {
+        fill: #0069b5;
+      }
+
+      .cls-8 {
+        clip-path: url(#clip-path-4);
+      }
+
+      .cls-9 {
+        clip-path: url(#clip-path-5);
+      }
+
+      .cls-10 {
+        clip-path: url(#clip-path-6);
+      }
+
+      .cls-11 {
+        stroke: none;
+      }
+
+      .cls-12 {
+        filter: url(#Subtração_4);
+      }
+
+      .cls-13 {
+        filter: url(#Caminho_243);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" x="44" width="359.074" height="1017.659"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect class="cls-1" x="2" width="359.556" height="284.659"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect class="cls-1" x="26" width="359.5" height="1132.497"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect class="cls-1" x="31" width="360.347" height="214.492"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <rect class="cls-1" x="39" width="359.056" height="183.659"/>
+    </clipPath>
+    <filter id="Caminho_243" x="-38.5" y="1133.341" width="479.056" height="1044.659" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-6">
+      <rect class="cls-1" x="38" width="359" height="171.492"/>
+    </clipPath>
+    <filter id="Subtração_4" x="-37.5" y="1171.008" width="406" height="171.492" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="18" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_338" data-name="Grupo 338" transform="translate(0)">
+    <g id="Componente_1_1" data-name="Componente 1 – 1">
+      <g id="Retângulo_41" data-name="Retângulo 41" class="cls-2">
+        <rect class="cls-11" width="361" height="303"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="360" height="302"/>
+      </g>
+    </g>
+    <g id="Grupo_de_rolagem_12" data-name="Grupo de rolagem 12" class="cls-3" transform="translate(-43.518 85.341)">
+      <path id="Caminho_42" data-name="Caminho 42" class="cls-4" d="M872.193,239c-1.1,0,229.154,2,395.811-116s0,1009,0,1009H870Z" transform="translate(-870 -114.341)"/>
+    </g>
+    <g id="Grupo_de_rolagem_6" data-name="Grupo de rolagem 6" class="cls-5" transform="translate(-2 818.341)">
+      <path id="Caminho_241" data-name="Caminho 241" class="cls-4" d="M872,239c-1,0,209,2,361-116s0,1009,0,1009H870Z" transform="translate(-870 -114.341)"/>
+    </g>
+    <g id="Grupo_de_rolagem_13" data-name="Grupo de rolagem 13" class="cls-6" transform="translate(-26 126.507)">
+      <path id="Subtração_2" data-name="Subtração 2" class="cls-7" d="M-447.5,1541H-872l2.342-1002.683c.022,0,.25,0,.671,0,6.84,0,69.2-.477,151.515-17.011a801.933,801.933,0,0,0,133.5-38.637c51.191-20,97.108-44.953,136.476-74.168Z" transform="translate(872 -408.507)"/>
+    </g>
+    <g id="Grupo_de_rolagem_10" data-name="Grupo de rolagem 10" class="cls-8" transform="translate(-31 1102.508)">
+      <path id="Subtração_3" data-name="Subtração 3" class="cls-7" d="M-483.346,2020H-872l2.141-1003.565c.021,0,.223,0,.613,0,6.254,0,63.272-.478,138.53-17.026A685.517,685.517,0,0,0-608.661,960.74c46.8-20.017,88.786-44.993,124.78-74.232V1538.5h51.228c-4.863,57.693-10.553,118.9-16.911,181.906-5.088,50.422-10.615,102.122-16.427,153.663-9.816,87.057-17.281,145.351-17.355,145.93Z" transform="translate(872 -886.508)"/>
+    </g>
+    <g id="Grupo_de_rolagem_8" data-name="Grupo de rolagem 8" class="cls-9" transform="translate(-38.5 1133.341)">
+      <g class="cls-13" transform="matrix(1, 0, 0, 1, 38.5, -1133.34)">
+        <path id="Caminho_243-2" data-name="Caminho 243" class="cls-4" d="M872.1,239c-1.05,0,219.437,2,379.027-116s0,1009,0,1009H870Z" transform="translate(-896 1031.5)"/>
+      </g>
+    </g>
+    <g id="Grupo_de_rolagem_11" data-name="Grupo de rolagem 11" class="cls-10" transform="translate(-37.5 1171.008)">
+      <g class="cls-12" transform="matrix(1, 0, 0, 1, 37.5, -1171.01)">
+        <path id="Subtração_4-2" data-name="Subtração 4" class="cls-7" d="M-481,702.5H-872l.035-16.066h.055l.567,0c6.349,0,64.23-.479,140.584-17.083C-631.479,647.766-547.448,609.8-481,556.508V702.5Z" transform="translate(841 614.5)"/>
+      </g>
+    </g>
+  </g>
+</svg>
