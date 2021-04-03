@@ -1,0 +1,20 @@
+.forma-pagamento {
+    border-style:groove;
+    border-radius: 1rem;
+}
+
+h1 {
+    margin-top: 5rem;
+}
+
+.card {
+    border-radius: 2rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.botao-doacao {
+    border-radius: 3rem;
+}

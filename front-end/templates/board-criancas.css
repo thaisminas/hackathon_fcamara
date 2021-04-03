@@ -1,0 +1,48 @@
+.imagem-lapis {
+    max-width:20px;
+    max-height:20px;
+}
+
+.imagem-lixeira {
+    max-width:20px;
+    max-height:20px;
+}
+
+.img-redonda {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative; 
+    margin-top: 2rem;
+    
+}
+
+.img-redonda img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: darkgray;
+  }
+
+h1 {
+    margin-top: 5rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: gray;
+    font-weight: bold;
+}
+
+.card{
+    border-radius: 3rem;
+    box-shadow: darkgrey;
+}
+
+body {
+    background-color: lightgray;
+}

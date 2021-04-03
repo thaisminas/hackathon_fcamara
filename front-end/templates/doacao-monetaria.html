@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Integra</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./doacao-monetaria.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/logo_horizontal.svg" width="60" height="30" class="d-inline-block align-top"
+                    alt="logotipo da Integra">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quem-somos">Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quem-ajudamos">Quem ajudamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#como-participar">Como participar</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Doação</h1>
+            <p>Aqui você decide como realizar a sua doação</p>
+
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Doação financeira</h5>
+                    <form>
+                        <div class="form-group">
+                            <label for="doacao-total"></label>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">R$</div>
+                                <input class="form-control" type="number" placeholder="Total">
+                            </div>
+                        </div>
+
+                        <div class="forma-pagamento text-left">
+                            <div class="group-radio">
+                                <h5 class="text-center">Escolha a sua forma de pagamento</h5>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="tipo-pagamento" data-toggle="modal"
+                                            data-target="#dados-cartao" data-dismiss="modal">
+                                        Cartão de crédito
+                                        <img src="./assets/Icon metro-credit-card@2x.png"
+                                            alt="imagem cartão de crédito">
+                                    </label>
+                                </div>
+
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="tipo-pagamento" checked>
+                                        Débito virtual
+                                        <img src="./assets/Icon awesome-money-bill-alt@2x.png"
+                                            alt="imagem débito virtual">
+                                    </label>
+                                </div>
+
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="tipo-pagamento">
+                                        Pix
+                                        <img src="./assets/União 1@2x.png" alt="imagem pagamento PIX">
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="container botao-doacao">
+                            <button type="button" class="btn btn-secondary my-2">Etapa anterior</button>
+                            <button type="button" class="btn btn-success my-2">Finalizar a doação</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="dados-cartao" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dados do cartão</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>X</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Seu nome" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Sobrenome</label>
+                                <input type="text" class="form-control" placeholder="Seu sobrenome" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label>Número do cartão</label>
+                                <input type="number" class="form-control" placeholder="Número do seu cartão" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Validade</label>
+                                <input type="date" class="form-control" placeholder="Validade" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>CVV</label>
+                                <input type="number" class="form-control" placeholder="3 números" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <label class="form-check-label" for="invalidCheck2">
+                                    Concordo com os termos e condições
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Confirmar</button>
+                    <button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
