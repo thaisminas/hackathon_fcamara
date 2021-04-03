@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+ Donate
+{% endblock %}
+{% block content %}
+<div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5; width: 80%; font-weight: bolder">
+  <br/>
+  {% if user.is_authenticated %}
+    {% for student in students %} 
+      {% if student.id == pk %}
+        <h3 style="color: black; text-align: center;"><b>Doe para {{ student.name }}</b></h3>
+      {% endif %}
+    {% endfor%}
+    <div class="modal-body">  
+      <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
+          <div style="text-align: center;"><button class="btn" style="color:white; background-color:#0069B5"><b>Doar</b></button>
+          <br/>
+        </form>
+      </div>
+    </div>
+</div>  
+<br/>
+  <script>  
+    var n = "{{ user.id }}";
+    document.getElementById("donator").value = n;
+
+    var s = "{{ pk }}";
+    document.getElementById("dStudent").value = s;
+
+
+  </script>
+
+{% endif %}
+{% endblock %}

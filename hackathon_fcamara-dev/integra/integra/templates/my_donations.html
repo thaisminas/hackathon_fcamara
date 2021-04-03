@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2><b>Minhas Doações</b></h2></br>
+  <ul>
+    <h3>Pendentes </h3>
+    {% for donate in object_list %}      
+      {% if donate.author.id == user.id %}
+        {% if donate.closed == False %}
+          {{ donate }}
+          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+          {% if donate.notify == False %}
+            {% if donate.donation_type.id == 4 %}
+              <br/><a href="{% url 'delivered_donations' donate.id %}" class="btn btn-outline-primary"><b>Entregue</b></a>
+            {% else %}
+              <br/><a href="{% url 'payement' donate.id %}" id="pagar" class="btn btn-outline-primary"><b>Pagar</b></a>  
+            {% endif %}        
+          {% endif %}
+          <hr>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </br>
+    <h3>Concluidas </h3>
+    {% for donate in object_list %}      
+      {% if donate.author.id == user.id %}
+        {% if donate.closed %}
+          {{ donate }}
+          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+          <hr>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}

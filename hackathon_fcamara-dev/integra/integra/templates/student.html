@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1><b>Crianças</b></h1>
+  <p>Aqui você pode visualizar as suas crianças cadastradas e adicionar outras que ainda não tenha cadastrado</p>  
+  {% if user.is_authenticated %}
+    {% for student in object_list %}
+      {% if student.author.id == user.id %}
+        <div style="text-align: center;">
+          <div class="card col" style="width: 15rem; margin-right: 5%;float: left; margin-top: 1rem; border-radius: 1rem; text-align: center;">
+            <div style="padding-top: 10%;">
+              {% if student.profile_pic %}
+                <img  style="width: 10rem; " src = "{{ student.profile_pic.url }}" sclass="card-img-top" class="rounded-circle">
+              {% else %}
+                <img style="width: 10rem;" src = "/media/images/photo-camera.svg" sclass="card-img-top" class="rounded-circle">
+              {% endif %} <br>
+              <a href="{% url 'add_list' student.id %}" id="add">
+                <b>{{ student }}</b> 
+              </a><br>Lista<hr> 
+            </div>
+            
+
+            <div class="card-body" style="height: 190px; overflow-y: auto; text-align: center;">
+              {% for item in selection %}
+                {% if item.student.id == student.id %}
+                  {% if item.item_quantity > 0 %}
+                    <a href="{% url 'edit_list' item.id %}">
+                      {{ item }}
+                    </a><br>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              <hr>Adicionar itens<hr>
+              {% for item in selection %}
+                {% if item.student.id == student.id %}
+                  {% if item.item_quantity == 0 %}
+                    <a href="{% url 'edit_list' item.id %}">
+                      {{ item }}
+                    </a></br>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    <br>
+      <div class="card-body" style="padding-left: 15%;">
+        <a  href="{% url 'add_student' %}"><img src="/media/images/add_student.png"></a>
+      </div>
+    </div>
+  </br>
+  <div><br/></div>
+  {% endif %}
+  <br/>
+{% endblock %}
+
+

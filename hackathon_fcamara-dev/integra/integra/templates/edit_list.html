@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Adicionar lista {% endblock %}
+
+{% block content %}
+<form method="POST">
+  {% for item in items %}
+    {% if item.id == pk %}
+      {{ item.item }}
+    {% endif %}
+  {% endfor %}
+  <div class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </div>
+  <button class="btn btn-outline-primary">Adicionar a lista</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2><b>{{ schl }}</b></h2></br>
+  {% for student in students %}
+    {% if student.school.name == schl %}
+        <a href="{% url 'add_donate' student.id %}">
+        {{ student.name }}
+        </a>
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
