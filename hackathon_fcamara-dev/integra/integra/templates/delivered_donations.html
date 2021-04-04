@@ -20,7 +20,7 @@
       {% endif %}
     {% endfor %}
   </br>
-    <h3>Concluidas </h3>
+    <h3>Concluídas </h3>
     {% for donate in donates %}      
       {% if donate.author.id == user.id %}
         {% if donate.closed %}

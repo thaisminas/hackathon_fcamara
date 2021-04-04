@@ -20,7 +20,7 @@ class SignUpForm(UserCreationForm):
 
       self.fields['password1'].widget.attrs['class'] = 'form-control'
       self.fields['password1'].label = 'Qual senha você quer?'
-      self.fields['password1'].widget.attrs['placeholder'] = 'Insira sua senha'
+      self.fields['password1'].widget.attrs['placeholder'] = 'Insira sua senha '
 
       self.fields['password2'].widget.attrs['class'] = 'form-control'
       self.fields['password2'].label = 'Confirme sua senha'

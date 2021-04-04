@@ -10,9 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
     </head>
-
-    <body style="background-image: url(./media/images/Background.svg); background-size: cover; height: 100%; font-family: 'Montserrat';">
-        <header>
+    <body style="background-image: url(./media/images/Background.svg); overflow-x: hidden; background-size:cover; font-family: 'Montserrat';">
+        <header class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;">
                 <a class="navbar-brand" href="#">
                     <img src="./media/images/logo_horizontal.svg" height="70" class="d-inline-block align-top" alt="logotipo da Integra">
@@ -26,13 +25,13 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#quem-somos">Quem somos</a>
+                    <a class="nav-link" href="#opa">Quem somos</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#quem-ajudamos">Quem ajudamos</a>
+                    <a class="nav-link" href="#quem-somos">Quem ajudamos</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#como-participar">Como participar</a>
+                    <a class="nav-link" href="#quem-ajudamos">Como participar</a>
                     </li>
                 </ul>
                 </div>
@@ -40,82 +39,66 @@
         </header>
 
         <main>
-            <div class="container pt-5" style="padding-left: 15px;">
-                <div class=" pt-5 card text-center borda-card" style="border-radius: 3rem;">
-                    <img class="card-img-top banner" height="250" src="./media/images/Logo.svg" alt="Banner da Integra">
-                    <div class=" col align-self-center">
-                        <a style="margin-top: -12rem; margin-left: -0.5rem;" href="{% url 'login' %}" class="btn btn-sm btn-success botao-login botao-login-responsivo">Faça o login</a>
+            <div class="container-fluid pt-5" style=" border-radius: 3rem;">
+                <div class="pt-5 card borda-card" style="border-radius: 3rem;">
+                    <img class="card-img-top banner mx-auto" height="250" src="./media/images/Logo.svg" alt="Banner da Integra">
+                    <div class="text-center"><a style="text-align: center; " href="{% url 'login' %}" class="btn-sm btn-success text-center" role="button">Faça o login</a>
                     </div>
-                    <div class="card-body">
-                        <h3 class="text-center fonte-heading pt-2" style="color: #0069B5"><b>A importância do material escolar no desenvolvimento da educação</h3>
-                        </b><p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sed nec tincidunt lorem.
-                        Vivamus tempus dapibus odio, nec
-                        condimentum urna dignissim a. Nam
-                        non vestibulum massa. Nulla facilisi.
-                        Vivamus neque enim, tempor in mauris
-                        sit amet, cursus vulputate ex.</p>
+                    <div class="card-body pt-5" style="padding: 35px" id="opa">
+                        <h3 class="text-center fonte-heading pt-2" style="color: #0069B5;"><b>A importância do material escolar</h3>
+                        </b><p class="card-text fonte-paragrafo">Todo início de ano os pais precisam enfrentar a maratona de compra do material escolar. Só quem já passou por essa situação sabe como é difícil. Os preços aumentam de semestre para semestre. 
+
+                            <br>Material escolar é tudo aquilo que os alunos e professores utilizam dentro da sala de aula ou, até mesmo, em casa para a preparação, pesquisa ou desenvolvimento das atividades.
+                            
+                            <br>Material escolar é essencial para o aprendizado.
+                            
+                            <br>Não há como o aluno acompanhar uma aula sem eles. Além de serem importantes para o desenvolvimento das aulas, os materiais escolares também têm o papel de deixar os alunos mais interessados em aprender, principalmente as crianças.  
+                            
+                            <br>Todo aluno precisa de um caderno para anotar o que o professor passa na aula. Para isso, ele precisa de um lápis ou uma caneta.
+                            </p>
                     </div>
                 </div>
             </div>
 
-            <div class="container pt-3" id="quem-somos" style="padding-left: 15px; border-radius: 3rem;">
-                <div class="card text-center borda-card" style="border-radius: 3rem;">
-                    <div class="card-body">
+            <div class="container-fluid pt-3" style=" border-radius: 3rem;" id="quem-somos">
+                <div class="card borda-card" style="border-radius: 3rem;">
+                    <div class="card-body"  style="padding: 35px">
                       <h3 class="text-center fonte-heading pt-2" style="color: #0069B5"><b>Quem somos</b></h2>
-                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sed nec tincidunt lorem.
-                        Vivamus tempus dapibus odio, nec
-                        condimentum urna dignissim a. Nam
-                        non vestibulum massa. Nulla facilisi.
-                        Vivamus neque enim, tempor in mauris
-                        sit amet, cursus vulputate ex.</p>
+                        <p class="card-text fonte-paragrafo">Nós somos o Integra. Somos uma plataforma digital ativa que integra pessoas com um único objetivo: facilitar o acesso de alunos carentes à educação, por meio de doações de materiais escolares, melhorando assim as condições de estudo e aprendizagem, e desenvolvimento social do Brasil. </p>
                     </div>
                 </div>
             </div>
             
-            <div class="container pt-3"  style="padding-left: 15px; border-radius: 3rem;" id="quem-ajudamos">
-                <div class="card text-center borda-card" style="border-radius: 3rem;">
-                    <div class="card-body">
+            <div class="container-fluid pt-3" style="border-radius: 3rem;" id="quem-ajudamos">
+                <div class="card borda-card" style="border-radius: 3rem;">
+                    <div class="card-body"  style="padding: 35px">
                       <h3 class="text-center fonte-heading pt-2" style="color: #0069B5"><b>Quem ajudamos</b></h2>
-                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sed nec tincidunt lorem.
-                        Vivamus tempus dapibus odio, nec
-                        condimentum urna dignissim a. Nam
-                        non vestibulum massa. Nulla facilisi.
-                        Vivamus neque enim, tempor in mauris
-                        sit amet, cursus vulputate ex.</p>
+                        <p class="card-text fonte-paragrafo">Por meio de doações online, auxiliamos alunos da rede pública de ensino na aquisição de materiais escolares, se carência houver, através de cadastro realizado pelos pais e/ou responsáveis.</p>
                     </div>
                 </div>
             </div>
              
-            <div class="container pt-3"  style="padding-left: 15px; border-radius: 3rem;" id="como-participar">
-                <div class="card text-center borda-card" style="border-radius: 3rem;">
-                    <div class="card-body">
+            <div class="container-fluid pt-3" style=" border-radius: 3rem;" id="como-participar">
+                <div class="card borda-card" style="border-radius: 3rem;">
+                    <div class="card-body"  style="padding: 35px">
                       <h3 class="text-center fonte-heading pt-2" style="color: #0069B5"><b>Como participar</b></h2>
-                        <p class="card-text fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sed nec tincidunt lorem.
-                        Vivamus tempus dapibus odio, nec
-                        condimentum urna dignissim a. Nam
-                        non vestibulum massa. Nulla facilisi.
-                        Vivamus neque enim, tempor in mauris
-                        sit amet, cursus vulputate ex.</p>
-                        <a class="btn btn-primary" href="{% url 'register' %}" role="button">Faça parte você também</a>
+                        <p class="card-text fonte-paragrafo"><b>Basta se cadastrar e participar!</b><br/>
+                            Se você chegou até aqui, é porque sabe da importância do material escolar para uma educação de qualidade e desenvolvimento social do Brasil. E que temos muito trabalho pela frente. A boa notícia é que dá pra mudar e que você pode ser um agente de transformação!</p>
+                        <div class="text-center"><a class="btn btn-warning" href="{% url 'register' %}" role="button"><b>Faça parte você também</b></a>
+                        </div>    
                     </div>
                 </div>
             </div>
         </main>
 
-        <footer style=" background-color: #0069B5;">
-            <div class="row" style="padding: 0.5rem; width: 50%; margin-left: 28%;">
-                <div class="col-auto botao-rede-responsiva">
-                    <a href="#" role="button">
-                        <img src="./media/images/Botão Instagram.svg" alt="botão de acesso ao instagram da Integra">
-                    </a>
-                    <a href="#" role="button">
-                        <img src="./media/images/Botão Facebook.svg" alt="botão de acesso ao Facebook da Integra" >
-                    </a>
-                </div>
+        <footer class="container-fluid" style="background-color: #0069B5;">
+            <div style="text-align: end;">
+                <a href="#" role="button">
+                    <img src="./media/images/Botão Instagram.svg" alt="botão de acesso ao instagram da Integra">
+                </a>
+                <a href="#" role="button">
+                    <img src="./media/images/Botão Facebook.svg" alt="botão de acesso ao Facebook da Integra" >
+                </a>
             </div>
         </footer>
         
@@ -123,5 +106,4 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
-
 </html>

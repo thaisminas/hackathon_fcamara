@@ -10,17 +10,19 @@
 </div>
 <div class="container-fluid form-group" style="background-color: #F5B822;border-radius: 20px; color: #0069B5; font-weight: bolder">
   <br/>
-<h4 style="text-align: center;"><b style="color: black; padding-bottom: 13%;">Suas informações</b></h4>
-{% if user.profile %}
-{% else %}
-  <div class="form-group">
-    <form method="POST">
-      {% csrf_token %}
-      <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
-      <button style="background-color: #F5B822; text-align: center; border-color: #F5B822; border: 0px; color: #F5B822; padding-left: 45%;"><img src="/media/images/avancar.png"></button>
-    </form>
-  </div>
-  </div>
+  <h4 style="text-align: center;"><b style="color: rgb(95,95,95); padding-bottom: 13%;">Suas informações</b></h4>
+  {% if user.profile %}
+  {% else %}
+    <div class="form-group">
+      <form method="POST">
+        {% csrf_token %}
+        <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
+        <div class="text-center">
+          <button style="background-color: #F5B822; text-align: center; border-color: #F5B822; border: 0px; color: #F5B822;"><img src="/media/images/avancar.png"></button>    
+        </div>  
+      </form>
+    </div>
+</div>
   <br/>
   <script>
     $("#cep").on("blur", function(){

@@ -6,7 +6,7 @@ class DonateForm(forms.ModelForm):
   class Meta:
     model = Donate
     fields = ('student', 'author', 'donation_type', 'message', 'anon')
-    labels = {'donation_type': 'Tipo da Doação', 'message': 'Mensagem', 'anon': 'Deseja realizar essa doação de forma anônima' }
+    labels = {'donation_type': 'Tipo de Doação', 'message': 'Mensagem', 'anon': 'Doar anonimamente?' }
     widgets = {
       'student': forms.TextInput(attrs={'class': 'form-control', 'id': 'dStudent', 'type': 'hidden'}),
       'author': forms.TextInput(attrs={'class': 'form-control', 'id': 'donator', 'type': 'hidden'}),
@@ -26,7 +26,7 @@ class StudentForm(forms.ModelForm):
   class Meta:
     model = Student
     fields = ('name', 'cpf', 'birth_date', 'grade', 'school', 'author', 'profile_pic', 'registration_pic')
-    labels = {'name': 'Qual o nome da sua criança?', 'school': 'Qual é a esscola da sua criaça?', 'cpf': 'Qual é o CPF da sua criança?', 'birth_date': 'Qual a data de nascimento da sua criança nasceu?', 'grade': 'Em qual série a sua criança está?', 'profile_pic': 'Selecione uma foto da sua criança', 'registration_pic': 'Selecione um registro de matrículas' }
+    labels = {'name': 'Qual o nome da sua criança?', 'school': 'Qual é a escola da sua criança?', 'cpf': 'Qual é o CPF da sua criança?', 'birth_date': 'Qual a data de nascimento da sua criança?', 'grade': 'Em qual série a sua criança está?', 'profile_pic': 'Selecione uma foto da sua criança', 'registration_pic': 'Selecione um registro de matrícula' }
     
     widgets = {
       'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Insira o nome do aluno'}),
@@ -42,7 +42,7 @@ class ProfileForm(forms.ModelForm):
   class Meta:
     model = Profile
     fields = ('user', 'profile_type', 'cep', 'estado', 'cidade', 'rua', 'bairro', 'numero')
-    labels = {'profile_type': 'Você é doador ou Responável?', 'cep': 'Qual é o seu CEP?','numero': 'Qual complemento da sua casa?', 'estado': 'Qual é o seu Estado?', 'bairro': 'Qual é o nome do seu bairro?', 'cidade': 'Qual é o nome da sua cidade?', 'rua': 'Qual é o nome da sua rua?'}
+    labels = {'profile_type': 'Você é doador ou responável?', 'cep': 'Qual é o seu CEP?','numero': 'Qual complemento da sua casa?', 'estado': 'Qual é o seu Estado?', 'bairro': 'Qual é o nome do seu Bairro?', 'cidade': 'Qual é o nome da sua Cidade?', 'rua': 'Qual é o nome da sua rua?'}
     widgets = {
       'cep': forms.TextInput(attrs={'class': 'form-control', 'id': 'cep', 'placeholder':'Insira seu CEP'}),
       'rua': forms.TextInput(attrs={'class': 'form-control', 'id': 'logradouro' , 'placeholder':'Insira sua rua'}),

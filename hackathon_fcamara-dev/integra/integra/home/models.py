@@ -63,7 +63,7 @@ class Item(models.Model):
 class Student(models.Model):
   author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
   name = models.CharField(max_length=255, null=True)
-  cpf = models.BigIntegerField(null=True)
+  cpf = models.BigIntegerField(null=True, blank= True)
   birth_date = models.DateField(null=True)
   grade = models.ForeignKey(Grade, on_delete=models.CASCADE, null=True)
   school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)

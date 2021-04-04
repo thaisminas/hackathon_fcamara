@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2><b>Doações</b></h2></br>
+  <h2><b>Doações recebidas</b></h2></br>
   <ul>
     <h3>Pendentes </h3>
     {% for donate in object_list %}  
@@ -18,7 +18,7 @@
       {% endif %}
     {% endfor %}
     </br>
-    <h3>Concluidas</h3>
+    <h3>Concluídas</h3>
     {% for donate in object_list %}  
       {% if donate.student.author == user %}
         {% if donate.closed %}

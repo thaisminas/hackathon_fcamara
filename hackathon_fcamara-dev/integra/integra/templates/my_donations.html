@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2><b>Minhas Doações</b></h2></br>
+  <h2><b>Doações realizadas</b></h2></br>
   <ul>
     <h3>Pendentes </h3>
     {% for donate in object_list %}      
@@ -20,7 +20,7 @@
       {% endif %}
     {% endfor %}
   </br>
-    <h3>Concluidas </h3>
+    <h3>Concluídas </h3>
     {% for donate in object_list %}      
       {% if donate.author.id == user.id %}
         {% if donate.closed %}

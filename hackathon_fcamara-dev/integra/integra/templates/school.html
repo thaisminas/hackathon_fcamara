@@ -4,10 +4,28 @@
 <h2><b>{{ schl }}</b></h2></br>
   {% for student in students %}
     {% if student.school.name == schl %}
-        <a href="{% url 'add_donate' student.id %}">
-        {{ student.name }}
-        </a>
-      <hr>
+      <div class="card text-center" style="margin-bottom: 30px; border-radius: 20px; border-color: #51C16F; width: 300px; float: left;">
+        <div class="text-center pt-3">  
+          {% if student.profile_pic %}
+            <img style="width: 10rem; height: 10rem;"src = "{{ student.profile_pic.url }}" sclass="card-img-top" class="rounded-circle">
+          {% else %}
+            <img style="width: 10rem; height: 10rem;" src = "/media/images/photo_02.svg" sclass="card-img-top" class="rounded-circle">
+          {% endif %}
+        </div>
+        <br/>
+        <a href="{% url 'add_donate' student.id %}" id="add"><b>{{ student }}</b></a><br/>   
+        <div style="background-color: #51C16F; color: white"><b>Itens da lista</b></div> 
+        <div class="card-body" style="height: 190px; overflow-y: auto; text-align: center;">
+          {% for item in selection %}
+            {% if item.student.id == student.id %}
+              {% if item.item_quantity > 0 %}
+                {{ item }}<br>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div style="float:left; width: 50px; height: 10px"></div>
     {% endif %}
   {% endfor %}
 

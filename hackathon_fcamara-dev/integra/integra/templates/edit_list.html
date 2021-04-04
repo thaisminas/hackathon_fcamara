@@ -2,10 +2,11 @@
 {% block title %} Adicionar lista {% endblock %}
 
 {% block content %}
+<h2><b>Adicionar item</b></h2>
 <form method="POST">
   {% for item in items %}
     {% if item.id == pk %}
-      {{ item.item }}
+      <b>{{ item.item }}</b>
     {% endif %}
   {% endfor %}
   <div class="form-group">

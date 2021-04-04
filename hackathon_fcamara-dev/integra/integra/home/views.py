@@ -29,8 +29,9 @@ class DonatedView(ListView):
 
 
 def SchoolView(request, schl):
+  selection = ItemSelection.objects.all()
   students = Student.objects.all()
-  return render(request, 'school.html', {'schl':schl.replace('-',' '), 'students': students})
+  return render(request, 'school.html', {'schl':schl.replace('-',' '), 'students': students, 'selection': selection})
 
 
 def LocalSchoolView(request, stt, city):

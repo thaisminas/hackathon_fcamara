@@ -3,15 +3,21 @@
  Donate
 {% endblock %}
 {% block content %}
-<div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5; width: 80%; font-weight: bolder">
+<div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5; width: 95%; font-weight: bolder">
   <br/>
   {% if user.is_authenticated %}
     {% for student in students %} 
       {% if student.id == pk %}
-        <h3 style="color: black; text-align: center;"><b>Doe para {{ student.name }}</b></h3>
+        {% if student.profile_pic %}
+          <div class="text-center">
+            <img height="170" width="170" src = "{{ student.profile_pic.url }}" sclass="card-img-top" class="rounded-circle text-center">
+            
+          </div>  
+          <br>
+        {% endif %}
+        <h3 style="color: rgb(95,95,95); text-align: center;"><b>Doe para {{ student.name }}</b></h3>
       {% endif %}
     {% endfor%}
-    <div class="modal-body">  
       <div class="form-group">
         <form method="POST">
           {% csrf_token %}
@@ -20,7 +26,6 @@
           <br/>
         </form>
       </div>
-    </div>
 </div>  
 <br/>
   <script>  
