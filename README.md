@@ -1,23 +1,33 @@
-Instale o Python 3.8.5 usando o link abaixo:
-https://www.python.org/downloads/release/python-385/
+Instale o Python 3.8.5 usando o link abaixo: [Python](https://www.python.org/downloads/release/python-385/)
 
-Clone a branch 'main' do repositório abaixo:
-https://github.com/thaisminas/hackathon_fcamara/
+Clone a branch 'main' do repositório abaixo: [Link git](https://github.com/thaisminas/hackathon_fcamara/)
 
-Acesse, no terminal de sua prefrência, a pasta na qual o repositório foi clonado.
-Escreva a sequência de comandos abaixo:
-´´´py -m venv venv
-.\venv\Scripts\activate
-pip install django
-pip install Pillow
-´´´
-Navegue até o caminho 'hackathon_fcamara-main\hackathon_fcamara-dev\integra\integra' e execute o comando abaixo:
+Acesse, no terminal de sua prefrência, a pasta na qual o repositório foi clonado. Escreva a sequência de comandos abaixo: 
+```bash 
+py -m venv venv 
+```
+```
+.\venv\Scripts\activate 
+```
+```
+pip install django 
+```
+```
+pip install Pillow 
+``` 
+Navegue até o caminho: 
+``` 
+'hackathon_fcamara-main\hackathon_fcamara-dev\integra\integra'
+``` 
+E execute o comando abaixo: 
+``` 
 py manage.py runserver
+``` 
+Agora acesse pelo navegador a url: http://127.0.0.1:8000/
 
-Agora acesse pelo navegador a url:
-http://127.0.0.1:8000/
-
-*Opcional
-Caso queira visualizar as tabelas do banco de dados, recomendamos que instale o DB Browser e abra o arquivo db.sqlite3.
-Caminho do arquivo:  'hackathon_fcamara-main\hackathon_fcamara-dev\integra\integra' 
+*Opcional Caso queira visualizar as tabelas do banco de dados, recomendamos que instale o DB Browser e abra o arquivo db.sqlite3. 
+Caminho do arquivo:
+``` 
+'hackathon_fcamara-main\hackathon_fcamara-dev\integra\integra' 
+``` 
 Link para o DB Browser: https://sqlitebrowser.org/dl/
