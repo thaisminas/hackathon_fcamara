@@ -1,4 +1,4 @@
-Instale o Python 3.8.5 usando o link abaixo: [Python](https://www.python.org/downloads/release/python-385/)
+Instale o [Python](https://www.python.org/downloads/release/python-385/) 3.8.5 
 
 Clone a branch 'main' do repositório abaixo: [Link git](https://github.com/thaisminas/hackathon_fcamara/)
 
