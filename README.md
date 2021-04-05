@@ -1,6 +1,6 @@
 Instale o [Python](https://www.python.org/downloads/release/python-385/) 3.8.5 
 
-Clone a branch 'main' do repositório abaixo: [Link git](https://github.com/thaisminas/hackathon_fcamara/)
+Clone a branch 'main' do [repositório](https://github.com/thaisminas/hackathon_fcamara/) 
 
 Acesse, no terminal de sua prefrência, a pasta na qual o repositório foi clonado. Escreva a sequência de comandos abaixo: 
 ```bash 
