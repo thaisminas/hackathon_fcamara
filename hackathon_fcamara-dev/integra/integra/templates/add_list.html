@@ -2,25 +2,20 @@
 {% block title %} Adicionar lista {% endblock %}
 
 {% block content %}
-  {% if user.is_authenticated %}
-    {% for student in students %}
-      {% if student.id == pk %}
-        <h1>Escolha os itens para {{ student.name }}</h1>
-      {% endif %}
-    {% endfor %}
-    {% for i in items %}
-      {% if i.pic %}
-        <button onclick="myFunction('{{ i.id }}')">
-          <img src ="{{ i.pic.url }}" sclass="card-img-top" style="height: 160px; width: 160px;">
-        </button>
-      {% endif %} 
-    {% endfor %}
-    {% for select in selections %}
-      {% if select.student.id == pk %}
-        {{ select }}  
-      {% endif %}
-    {% endfor %}
-
+    {% if user.is_authenticated %}
+          <h2><b>Adicionar lista</b></h2><br/>
+      {% for i in items %}
+        {% if i.pic %}
+          <button onclick="myFunction('{{ i.id }}')">
+            <img src ="{{ i.pic.url }}" sclass="card-img-top" style="height: 160px; width: 160px;">
+          </button>
+        {% endif %} 
+      {% endfor %}
+      {% for select in selections %}
+        {% if select.student.id == pk %}
+          {{ select }}  
+        {% endif %}
+      {% endfor %}
     
     <form method="POST">
       <div class="form-group" style="color: white;">
@@ -122,7 +117,7 @@
         $("hr").remove();
         $('select').each(function(){
           $(this).attr('readonly','readonly');
-          $(this).attr('disebled','true');
+          $(this).css('pointer-events', 'none');
         });
       });
 

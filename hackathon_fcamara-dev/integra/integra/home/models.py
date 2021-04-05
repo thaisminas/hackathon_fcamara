@@ -138,7 +138,7 @@ class Donate(models.Model):
     if self.anon:
       return 'De: Anônimo Para: ' + self.student.name
     else:
-      return 'De: ' + str(self.author) + ' Para: ' + self.student.name
+      return 'De: ' + self.author.first_name + " " + self.author.last_name + ' Para: ' + self.student.name
 
 
 

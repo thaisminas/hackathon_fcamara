@@ -15,7 +15,8 @@
               {% endif %}
             </div>
             <br/>
-            <a href="{% url 'add_list' student.id %}" id="add"><b>{{ student }}</b></a><br/>   
+            <b>{{ student }}</b>
+            <a href="{% url 'add_list' student.id %}" id="add">Adicionar Lista</a><br/>   
             <div style="background-color: #51C16F; color: white"><b>Itens da lista</b></div> 
             <div class="card-body" style="height: 95px; overflow-y: auto; text-align: center;">
               {% for item in selection %}
