@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2><b>Feed</b></h2><br/>
+  {% for donate in object_list %}
+    {% if donate.closed %}
+      {{ donate }}  
+      <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}</li>
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

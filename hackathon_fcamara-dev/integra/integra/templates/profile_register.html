@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+ Donate
+{% endblock %}
+{% block content %}
+<div>
+  <ul><h2><b>Olá!</b></h2>
+  <p><b>   Estamos felizes com seu interesse pela nossa Plataforma! Para efetuar seu cadastro, precisamos de algumas informações.
+  </b> </p></ul>
+</div>
+<div class="container-fluid form-group" style="background-color: #F5B822;border-radius: 20px; color: #0069B5; font-weight: bolder">
+  <br/>
+  <h4 style="text-align: center;"><b style="color: rgb(95,95,95); padding-bottom: 13%;">Suas informações</b></h4>
+  {% if user.profile %}
+  {% else %}
+    <div class="form-group">
+      <form method="POST">
+        {% csrf_token %}
+        <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
+        <div class="text-center">
+          <button style="background-color: #F5B822; text-align: center; border-color: #F5B822; border: 0px; color: #F5B822;"><img src="/media/images/avancar.png"></button>    
+        </div>  
+      </form>
+    </div>
+</div>
+  <br/>
+  <script>
+    $("#cep").on("blur", function(){
+    var numCep = $("#cep").val();
+    var url = "https://viacep.com.br/ws/"+numCep+"/json";
+
+      $.ajax({
+          url: url,
+          type: "get",
+          dataType: "json",
+
+          success:function(dados){
+              console.log(dados);
+              $("#uf").val(dados.uf);
+              $("#cidade").val(dados.localidade);
+              $("#logradouro").val(dados.logradouro);
+              $("#bairro").val(dados.bairro);
+          }
+      })
+
+   
+    })
+  </script>
+  <script>  
+    var n = "{{ user.id }}";
+    document.getElementById("pUser").value = n;
+  </script>
+
+{% endif %}
+{% endblock %}

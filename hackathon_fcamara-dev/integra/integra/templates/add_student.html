@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+ Adicionar novo aluno
+{% endblock %}
+{% block content %}
+<div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5;font-weight: bolder; width: 95%;">
+  <br/>
+  {% if user.is_authenticated %}
+    <div class="modal-body">
+      <h3 style="color: rgb(95,95,95); text-align: center;"><b>Adicionar novo aluno</b></h3>
+      <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.media }}
+          <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
+          <div style="text-align: center;"><button class="btn" style="color:white; background-color:#0069B5"><b>Adicionar aluno</b></button></div>
+        </form>
+      </div>
+    </div>
+  
+  {% endif %}
+</div>
+<br/>
+<script>  
+  var n = "{{ user.id }}";
+  document.getElementById("owner").value = n;
+  document.getElementById("id_profile_pic").style.fontSize = '10px';
+  document.getElementById("id_registration_pic").style.fontSize = '10px';
+  
+</script>
+{% endblock %}

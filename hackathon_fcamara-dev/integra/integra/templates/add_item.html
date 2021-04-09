@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Adicionar lista {% endblock %}
+
+{% block content %}
+<form method="POST">
+
+  <div class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </div>
+  <button class="btn btn-outline-primary">Adicionar a lista</button>
+</form>
+<script> 
+  var s = "{{ pk }}";
+  $(function() {
+    document.getElementById("dStudent").value = s;
+  })
+</script>
+{% endblock %}
