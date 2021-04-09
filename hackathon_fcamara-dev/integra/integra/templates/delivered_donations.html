@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3><b>Minhas Doações</b></h2></br>
+  <ul>
+    <h3>Pendentes </h3>
+    {% for donate in donates %}      
+      {% if donate.author.id == user.id %}
+        {% if donate.closed == False %}
+          {{ donate }}
+          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+          {% if donate.notify == False %}
+            {% if donate.donation_type.id == 4 %}
+              <br/><a href="{% url 'delivered_donations' donate.id %}" class="btn btn-outline-primary"><b>Entregue</b></a>
+            {% else %}
+              <br/><a href="#" class="btn btn-outline-primary"><b>Pagar</b></a>   
+            {% endif %}        
+          {% endif %}
+          <hr>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </br>
+    <h3>Concluídas </h3>
+    {% for donate in donates %}      
+      {% if donate.author.id == user.id %}
+        {% if donate.closed %}
+          {{ donate }}
+          <br/>{{ donate.message }} - {{donate.created_at|date:'d/m/y'}} às {{donate.created_at|date:'H:i'}}
+          <hr>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for donate in object_list %} 
+      {% if donate.id == pk %}
+        {{ donate }}
+      {% endif %}
+    {% endfor %}  
+  </ul>
+  <div class="modal hide fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Confirmar entrega?</h5>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja confirmar a entrega</p>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal({backdrop: 'static', keyboard: false});
+        $('#myModal').modal('show');
+    });
+  </script>
+{% endblock %}

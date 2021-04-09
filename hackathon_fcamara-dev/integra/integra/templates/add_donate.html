@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+ Donate
+{% endblock %}
+{% block content %}
+<div class="container-fluid form-group" style="background-color: #F5B822; border-radius: 20px; color: #0069B5; width: 95%; font-weight: bolder">
+  <br/>
+  {% if user.is_authenticated %}
+    {% for student in students %} 
+      {% if student.id == pk %}
+        {% if student.profile_pic %}
+          <div class="text-center">
+            <img height="170" width="170" src = "{{ student.profile_pic.url }}" sclass="card-img-top" class="rounded-circle text-center">
+            
+          </div>  
+          <br>
+        {% endif %}
+        <h3 style="color: rgb(95,95,95); text-align: center;"><b>Doe para {{ student.name }}</b></h3>
+      {% endif %}
+    {% endfor%}
+      <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          <div style="padding-left: 6%; padding-right: 6%; border-radius: 1rem;">{{ form.as_p }}</div>
+          <div style="text-align: center;"><button class="btn" style="color:white; background-color:#0069B5"><b>Doar</b></button>
+          <br/>
+        </form>
+      </div>
+</div>  
+<br/>
+  <script>  
+    var n = "{{ user.id }}";
+    document.getElementById("donator").value = n;
+
+    var s = "{{ pk }}";
+    document.getElementById("dStudent").value = s;
+
+    $("label").css('padding-right', '30px');
+  </script>
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main>
+      <div class="container">
+          <h1>Doação</h1>
+          <p>Aqui você decide como realizar a sua doação</p>
+
+          <div class="card text-center">
+              <div class="card-body">
+                  <h5 class="card-title">Doação financeira</h5>
+                  <form>
+                      <div class="form-group">
+                          <label for="doacao-total"></label>
+                          <div class="input-group-prepend">
+                              <div class="input-group-text">R$</div>
+                              <input class="form-control" type="number" placeholder="Total">
+                          </div>
+                      </div>
+
+                      <div class="forma-pagamento text-left">
+                          <div class="group-radio">
+                              <h5 class="text-center">Escolha a sua forma de pagamento</h5>
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="tipo-pagamento" id="credito" data-toggle="modal"
+                                          data-target="#dados-cartao" data-dismiss="modal">
+                                      Cartão de crédito
+                                      <img src="/media/images/Icon metro-credit-card@2x.png"
+                                          alt="imagem cartão de crédito">
+                                  </label>
+                              </div>
+
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="tipo-pagamento"  id="debito" checked>
+                                      Débito virtual
+                                      <img src="/media/images/Icon awesome-money-bill-alt@2x.png"
+                                          alt="imagem débito virtual">
+                                  </label>
+                              </div>
+
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" id="pix" name="tipo-pagamento">
+                                      Pix
+                                      <img src="/media/images/União 1@2x.png" alt="imagem pagamento PIX">
+                                  </label>
+                              </div>
+                              
+                          </div>
+                      </div>
+                      <div class="container botao-doacao">
+                          <button type="button" id="volta" class="btn btn-secondary my-2">Etapa anterior</button>
+                          <button type="button" id="finalizar" class="btn btn-success my-2">Finalizar a doação</button>
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <div class="modal fade" id="dados-cartao" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Dados do cartão</h5>
+              </div>
+
+              <div class="modal-body">
+                  <form>
+                      <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                              <label>Nome</label>
+                              <input type="text" class="form-control" placeholder="Seu nome" required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                              <label>Sobrenome</label>
+                              <input type="text" class="form-control" placeholder="Seu sobrenome" required>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                              <label>Número do cartão</label>
+                              <input type="number" class="form-control" placeholder="Número do seu cartão" required>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                              <label>Validade</label>
+                              <input type="date" class="form-control" placeholder="Validade" required>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                              <label>CVV</label>
+                              <input type="number" class="form-control" placeholder="3 números" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                              <label class="form-check-label" for="invalidCheck2">
+                                  Concordo com os termos e condições
+                              </label>
+                          </div>
+                      </div>
+                  </form>
+
+              </div>
+
+              <div class="modal-footer">
+                  <button class="btn btn-primary" id="confi" type="submit">Confirmar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="modal hide fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Confirmar pagamento</h5>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja confirmar o pagamento?</p>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function toggle(source) {
+      checkboxes = document.getElementsByName('foo');
+      for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+    
+    $("#volta").click(function() {
+      var bla = "http://127.0.0.1:8000/my_donations/";
+      window.location.href = bla;
+    });
+
+    $("#finalizar").click(function() {
+      if ($('#pix').is(':checked')) {
+        $('#myModal').modal('show');
+      }
+      if ($('#debito').is(':checked')) {
+        $('#myModal').modal('show');
+      }
+      if ($('#credito').is(':checked')) {
+        $('#dados-cartao').modal('show');
+      }
+    });
+    $("#confi").click(function() {
+      $('#dados-cartao').modal('hide');
+      $('#myModal').modal('show')
+    });
+  </script>
+{% endblock %}

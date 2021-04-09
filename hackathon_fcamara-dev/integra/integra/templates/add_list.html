@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %} Adicionar lista {% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+          <h2><b>Adicionar lista</b></h2><br/>
+      {% for i in items %}
+        {% if i.pic %}
+          <button onclick="myFunction('{{ i.id }}')">
+            <img src ="{{ i.pic.url }}" sclass="card-img-top" style="height: 160px; width: 160px;">
+          </button>
+        {% endif %} 
+      {% endfor %}
+      {% for select in selections %}
+        {% if select.student.id == pk %}
+          {{ select }}  
+        {% endif %}
+      {% endfor %}
+    
+    <form method="POST">
+      <div class="form-group" style="color: white;">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+          
+          <div style="padding-bottom: 10px;">{{ form }}</div>
+        {% endfor %}
+      </div>
+      <button class="btn btn-outline-primary">Adicionar lista</button>
+    </form>
+
+    <script> 
+       $(function() {
+        $("#id_itemselection_set-0-item").val('Agenda escolar');
+        $("#id_itemselection_set-1-item").val('Apontador com depósito');
+        $("#id_itemselection_set-2-item").val('Borracha escolar');
+        $("#id_itemselection_set-3-item").val('Caderno brochurão - 80 fls');
+        $("#id_itemselection_set-4-item").val('Caderno de desenho - 96 fls');
+        $("#id_itemselection_set-5-item").val('Caderno universitário - 200 fls');
+        $("#id_itemselection_set-6-item").val('Calculadora de bolso 8 dígitos');
+        $("#id_itemselection_set-7-item").val('Caneta esferográfica (2 azuis, 1 preta e 1 vermelha)');
+        $("#id_itemselection_set-8-item").val('Canetinha hidrográfica (12 cores)');
+        $("#id_itemselection_set-9-item").val('Cola branca 90g');
+        $("#id_itemselection_set-10-item").val('Cola colorida');
+        $("#id_itemselection_set-11-item").val('Esquadro 45º');
+        $("#id_itemselection_set-12-item").val('Esquadro 60º');
+        $("#id_itemselection_set-13-item").val('Giz de cera (12 cores)');
+        $("#id_itemselection_set-14-item").val('Grafite 0.7');
+        $("#id_itemselection_set-15-item").val('Lápis de cor (12 cores)');
+        $("#id_itemselection_set-16-item").val('Lápis grafite');
+        $("#id_itemselection_set-17-item").val('Lapiseira 0.7');
+        $("#id_itemselection_set-18-item").val('Massa para modelar');
+        $("#id_itemselection_set-19-item").val('Material dourado');
+        $("#id_itemselection_set-20-item").val('Pasta plástica transparente com elástico');
+        $("#id_itemselection_set-21-item").val('Pincel nº 8');
+        $("#id_itemselection_set-22-item").val('Régua');
+        $("#id_itemselection_set-23-item").val('Tesoura sem ponta');
+        $("#id_itemselection_set-24-item").val('Tinta guache (6 cores)');
+        $("#id_itemselection_set-25-item").val('Transferidor 180º');
+        $("#id_itemselection_set-26-item").remove();
+        $("#id_itemselection_set-27-item").remove();
+        $("#id_itemselection_set-28-item").remove();
+        $("#id_itemselection_set-29-item").remove();
+        $("#id_itemselection_set-30-item").remove();
+        $("#id_itemselection_set-31-item").remove();
+        $("#id_itemselection_set-32-item").remove();
+        $("#id_itemselection_set-33-item").remove();
+        $("#id_itemselection_set-34-item").remove();
+        $("#id_itemselection_set-35-item").remove();
+        $("#id_itemselection_set-36-item").remove();
+        $("#id_itemselection_set-37-item").remove();
+        $("#id_itemselection_set-38-item").remove();
+        $("#id_itemselection_set-39-item").remove();
+        $("#id_itemselection_set-40-item").remove();
+        $("#id_itemselection_set-41-item").remove();
+        $("#id_itemselection_set-42-item").remove();
+        $("#id_itemselection_set-43-item").remove();
+        $("#id_itemselection_set-44-item").remove();
+        $("#id_itemselection_set-45-item").remove();
+        $("#id_itemselection_set-46-item").remove();
+        $("#id_itemselection_set-47-item").remove();
+        $("#id_itemselection_set-48-item").remove();
+        $("#id_itemselection_set-49-item").remove();
+        $("#id_itemselection_set-50-item").remove();
+        $("#id_itemselection_set-51-item").remove();
+        $("#id_itemselection_set-26-item_quantity").remove();
+        $("#id_itemselection_set-27-item_quantity").remove();
+        $("#id_itemselection_set-28-item_quantity").remove();
+        $("#id_itemselection_set-29-item_quantity").remove();
+        $("#id_itemselection_set-30-item_quantity").remove();
+        $("#id_itemselection_set-31-item_quantity").remove();
+        $("#id_itemselection_set-32-item_quantity").remove();
+        $("#id_itemselection_set-33-item_quantity").remove();
+        $("#id_itemselection_set-34-item_quantity").remove();
+        $("#id_itemselection_set-35-item_quantity").remove();
+        $("#id_itemselection_set-36-item_quantity").remove();
+        $("#id_itemselection_set-37-item_quantity").remove();
+        $("#id_itemselection_set-38-item_quantity").remove();
+        $("#id_itemselection_set-39-item_quantity").remove();
+        $("#id_itemselection_set-40-item_quantity").remove();
+        $("#id_itemselection_set-41-item_quantity").remove();
+        $("#id_itemselection_set-42-item_quantity").remove();
+        $("#id_itemselection_set-43-item_quantity").remove();
+        $("#id_itemselection_set-44-item_quantity").remove();
+        $("#id_itemselection_set-45-item_quantity").remove();
+        $("#id_itemselection_set-46-item_quantity").remove();
+        $("#id_itemselection_set-47-item_quantity").remove();
+        $("#id_itemselection_set-48-item_quantity").remove();
+        $("#id_itemselection_set-49-item_quantity").remove();
+        $("#id_itemselection_set-50-item_quantity").remove();
+        $("#id_itemselection_set-51-item_quantity").remove();
+
+        $("input:checkbox").remove();
+        $("label").remove();
+        $("li").remove();
+        $("ul").remove();
+        $("hr").remove();
+        $('select').each(function(){
+          $(this).attr('readonly','readonly');
+          $(this).css('pointer-events', 'none');
+        });
+      });
+
+      var s = { pk };
+      document.getElementById("dStudent").value = s;
+    </script>
+
+  {% endif %}
+{% endblock %}
